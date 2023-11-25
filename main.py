@@ -1,6 +1,6 @@
 import pygame
 import random
-
+import math
 if __name__ == "__main__":
     pygame.init()
     size = width, height = 800, 600
@@ -39,11 +39,18 @@ if __name__ == "__main__":
         screen.fill(pygame.Color('Black'))
         for i in range(10000):
             screen.fill(pygame.Color('white'), (random.random()*width,random.random()*height,1,1))
+
+    def line(screen):
+        pygame.draw.line(screen, (0,255,0), (10,10),(20,60))
+        pygame.draw.polygon(screen,pygame.Color('yellow'),[(0,0),(60,120),(120,60)])# треугольник
+        pygame.draw.circle(screen,pygame.Color('yellow'),(width//2,height//2), 35)# круг
+        pygame.draw.arc(screen, pygame.Color('yellow'),(100,150,280,100),0,3.14,5 )
     while pygame.event.wait().type != pygame.QUIT:
         # draw()
         # draw_squre(screen)
-        rect(screen)
-        star_sky(screen)
+        # rect(screen) квадрат
+        # star_sky(screen)# аля звездное небо
+        line(screen)
         pygame.display.flip()#смена кадроов
 
     pygame.quit()
