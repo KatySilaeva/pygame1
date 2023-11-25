@@ -35,10 +35,10 @@ if __name__ == "__main__":
         screen.fill((0,255,0))
         screen.fill(pygame.Color('Red'),pygame.Rect(10,10,60,60))
 
-        def star_sky(screen):
-            screen.fill(pygame.Color('Black'))
-            for i in range(10000):
-                screen.fill(pygame.Color('white')), (random.random()*width,random.random()*height,1,1)
+    def star_sky(screen):
+        screen.fill(pygame.Color('Black'))
+        for i in range(10000):
+            screen.fill(pygame.Color('white'), (random.random()*width,random.random()*height,1,1))
     while pygame.event.wait().type != pygame.QUIT:
         # draw()
         # draw_squre(screen)
